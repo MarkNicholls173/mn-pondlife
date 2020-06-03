@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Pondlife</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="page">
+    <h1>Pondlife</h1>
+    <p>To record the water quality measurements for your pond</p>
+    <div class="metanav">
+        <!--stick some nav stuff here-->
+        <a href="{{ url_for('result') }}">View results</a>
+        <a href="{{ url_for('input') }}">Add entry</a>
+    </div>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block body %}
+    {% endblock %}
+</div>
+</body>

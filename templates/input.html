@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+        <h1>Add Entry</h1>
+        <form action="{{ request.path }}" method="POST">
+            <p>Date: <input type="text" name="date"/></p>
+            <p>Temperature: <input type="text" name="temp"/></p>
+            <p>Ammonia: <input type="text" name="amm"/></p>
+            <p>Nitrites: <input type="text" name="nitri"/></p>
+            <p>Nitrates: <input type="text" name="nitra"/></p>
+            <p>Ph: <input type="text" name="ph"/></p>
+            <p>General Hardness: <input type="text" name="g_hard"/></p>
+            <p>Carbonate Hardness: <input type="text" name="c_hard"/></p>
+            <p><input type="submit" value="Submit"/></p>
+        </form>
+    </body>
+{% endblock %}

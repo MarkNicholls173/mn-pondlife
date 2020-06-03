@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+        <h1>Edit entry</h1>
+        <form action="{{ request.path }}" method="POST">
+            <p>Date: <input type="text" name="date" value="{{ entry.date }}"/></p>
+            <p>Temperature: <input type="text" name="temp" value="{{ entry.temp }}"/></p>
+            <p>Ammonia: <input type="text" name="amm" value="{{ entry.ammonia }}"/></p>
+            <p>Nitrites: <input type="text" name="nitri" value="{{ entry.nitrites }}"/></p>
+            <p>Nitrates: <input type="text" name="nitra" value="{{ entry.nitrates }}"/></p>
+            <p>Ph: <input type="text" name="ph" value="{{ entry.ph }}"/></p>
+            <p>General Hardness: <input type="text" name="g_hard"  value="{{ entry.g_hardness }}"/></p>
+            <p>Carbonate Hardness: <input type="text" name="c_hard"  value="{{ entry.c_hardness }}"/></p>
+            <p><input type="submit" value="Submit"/></p>
+        </form>
+{% endblock %}

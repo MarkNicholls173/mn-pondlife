@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+        <h1>Results Table</h1>
+        <table border=1>
+            <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>Temperature</td>
+                    <td>Ammonia</td>
+                    <td>Nitrites</td>
+                    <td>Nitrates</td>
+                    <td>Ph</td>
+                    <td>General Hardness</td>
+                    <td>Carbonate Hardness</td>
+                    <td>Maintenance</td>
+                </tr>
+            </thead>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.date }}</td>
+                    <td>{{ result.temp }}</td>
+                    <td>{{ result.ammonia }}</td>
+                    <td>{{ result.nitrites }}</td>
+                    <td>{{ result.nitrates }}</td>
+                    <td>{{ result.ph }}</td>
+                    <td>{{ result.g_hardness }}</td>
+                    <td>{{ result.c_hardness }}</td>
+                    <td>
+                        <a href="{{ url_for('edit', id = result.id) }}">Edit</a> | 
+                        <a href="{{ url_for('delete', id = result.id) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+{% endblock %}

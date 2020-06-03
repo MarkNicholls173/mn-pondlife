@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+    {% if session.logged_in %}
+        <form action="{{ url_for('add_entry') }}" method="POST" class="add-entry">
+            <dl>
+                <dt>Title:</dt>
+                <dd><input type="text" size="30" name="title"></dd>
+                <dt>Text:</dt>
+                <dd><textarea name="text" rows="5" cols="40"></textarea></dd>
+                <dd><input type="submit" value="Share"></dd>
+            </dl>
+        </form>
+    {% endif %}
+    <ul class="entries">
+        {% for entry in entries %}
+        <li><h2>{{ entry.title }}</h2>{{ entry.text | safe }}
+            <form action="{{ url_for('edit_entry') }}" method="POST"><input type="hidden" name="edit_id" value={{ entry.id }}>
+            <input type="submit" value="Edit entry"></form>
+            <form action="{{ url_for('del_entry') }}" method="POST"><input type="hidden" name="id" value={{ entry.id }}>
+            <input type="submit" value="Delete entry"></form>
+        </li>
+        {% else %}
+            <li><em>Unbelievable. No entries here so far</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
