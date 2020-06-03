@@ -3,6 +3,7 @@ tmp/
 __pycache__/
 *.pyc
 
+dev_config.py
 instance/
 .pytest_cache/
 .coverage
