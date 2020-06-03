@@ -24,14 +24,15 @@ class pondlife(db.Model):
     g_hardness = db.Column(db.Float(4))
     c_hardness = db.Column(db.Float(4))
 
-#def __init__(self, date, temp, ammonia, nitrites, nitrates, ph, hardness):
-#    self.date = date
-#    self.temp = temp
-#    self.ammonia = ammonia
-#    self.nitrites = nitrites
-#    self.nitrates = nitrates
-#    self.ph = ph
-#    self.hardness = hardness
+def __init__(self, date, temp, ammonia, nitrites, nitrates, ph, hardness):
+    self.date = date
+    self.temp = temp
+    self.ammonia = ammonia
+    self.nitrites = nitrites
+    self.nitrates = nitrates
+    self.ph = ph
+    self.g_hardness = g_hardness
+    self.c_hardness = c_hardness
 
 
 @app.route('/')
