@@ -4,7 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 #config
 DEBUG = True
 SECRET_KEY = "random string here"
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres123@localhost/pondlife'
+#SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres123@localhost/pondlife'
+SQLALCHEMY_DATABASE_URI = 'postgres://vjvucesjmijqxm:bbd8b7e86de590a3df8d9a996f840abe816a9f82b75142475b5da1e67b4d66e3@ec2-34-232-147-86.compute-1.amazonaws.com:5432/dr3h1m0seffj2'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 app = Flask(__name__)
